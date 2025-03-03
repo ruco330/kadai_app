@@ -19,7 +19,7 @@ APIに対して画像分析リクエストを送信するためのコマンド�
 ```bash
 curl -X POST "http://localhost:8080/ai-analysis" ^
      -H "Content-Type: application/json" ^
-     -d "{ \"imagePath\": \"/image/d03f1d36ca69348c51aa/c413eac329e1c0d03/test.jpg\" }"
+     -d "{ \"imagePath\": \"/image/test.jpg\" }"
 
 ```
 
