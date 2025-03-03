@@ -59,6 +59,24 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ```
 
+## 仕様確認事項
+
+### 1. 画像パスのリクエスト形式
+- 現状、`image_path`は`application/json`形式（`{ "image_path": "/path/to/image" }`）を想定しています。
+- 将来的にAPIの仕様によっては`application/x-www-form-urlencoded`形式など、別の形式に変更される可能性もあります。
+
+### 2. APIレスポンスの仕様
+- `message`の最大長が255文字を超過した場合、先頭255文字に切り詰めます。エラーコードが設定されていない場合やStackTraceなどが含まれる場合を想定しています。
+  
+### 3. エラーハンドリング
+- APIを呼び出せない場合や、DBに登録するとエラーになる場合はエラーとしています。
+- その他、APIの仕様に応じてエラーハンドリングの検討が必要です。
+
+### 4. 環境設定
+- 設定ファイルをローカル、本番で切り替える想定をしています。`application.properties`の`spring.profiles.active=local`でローカル設定を選択し、`application-local.properties`を使用します。
+- 本番環境では`spring.profiles.active=prod`を指定し、`application-prod.properties`を使用します。
+
+
 ## ライセンス
 本プロジェクトはMITライセンスのもとで提供されます。
 
