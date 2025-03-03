@@ -23,28 +23,7 @@ curl -X POST "http://localhost:8080/ai-analysis" ^
 
 ```
 
-### **1. AI画像分析API**
-- **レスポンス例（成功時）**
-```json
- {
-    "success": true,
-    "message": "success",
-    "estimated_data": {
-        "class": 3,
-        "confidence": 0.8683
-    }
- }
-```
-- **レスポンス例（失敗時）**
-```json
- {
-    "success": false,
-    "message": "Error:E50012",
-    "estimated_data": {}
- }
-```
-
-### **2. Mock AI API**
+## Mock AI API
 
 実際に動作するAPIは存在しないため、モックアップを作成しています。
 
